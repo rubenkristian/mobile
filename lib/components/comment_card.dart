@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CommentCard extends StatelessWidget {
+  const CommentCard({super.key});
+
   @override
   Widget build(Object context) {
     return Card(
