@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class PostCard extends StatelessWidget {
-  const PostCard({super.key});
+  final int postId;
+  const PostCard({super.key, required this.postId});
 
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     return Card(
-      child: Container(padding: EdgeInsets.all(5), child: Row(children: [])),
+      child: InkWell(
+        onTap: () {
+          context.go('/post/$postId');
+        },
+        child: Container(
+          padding: EdgeInsets.all(5),
+          child: Column(
+            children: <Widget>[
+              Text("Title"),
+              SizedBox(height: 10),
+              Text("Description"),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
